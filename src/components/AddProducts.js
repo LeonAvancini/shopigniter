@@ -105,16 +105,15 @@ export const AddProducts = () => {
           }}
         />
         <br />
-        <label
-          htmlFor="product-price"
+        <label htmlFor="product-price">Precio del producto</label>
+        <InputStyle
+          type="number"
+          required
           value={productPrice}
           onChange={(e) => {
             setProductPrice(e.target.value);
           }}
-        >
-          Precio del producto
-        </label>
-        <InputStyle type="number" required />
+        />
         <br />
         <label htmlFor="product-img">Imagen del producto</label>
         <InputStyle type="file" onChange={productImgHandler} id="file" />
