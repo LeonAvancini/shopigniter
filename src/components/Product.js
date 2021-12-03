@@ -9,6 +9,8 @@ const ProductContainer = styled.div`
   height: 500px;
   border: 1px solid gray;
   margin: 20px;
+  background-color: #eeeeee;
+  border-radius: 20px;
 `;
 const TitleStyled = styled.h2``;
 const PriceStyled = styled.p`
@@ -29,6 +31,8 @@ const ButtonStyled = styled.button`
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  background-color: #cccccc;
+
   &:hover {
     background-color: lightgreen;
   }

@@ -63,14 +63,6 @@ export const Products = ({ userId }) => {
             product={product}
             addToCart={addProductToCart}
           />
-
-          // <Product
-          //   key={product.ID}
-          //   product={product}
-          //   addToCart={(product) => {
-          //     addProductToCart(product);
-          //   }}
-          // />
         );
       })}
     </Container>
