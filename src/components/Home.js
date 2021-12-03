@@ -10,33 +10,36 @@ const Container = styled.div`
 `;
 
 export const Home = () => {
-  const GetCurrentUser = () => {
-    const [user, setUser] = useState(null);
-    useEffect(() => {
-      auth.onAuthStateChanged((user) => {
-        if (user) {
-          db.collection("users")
-            .doc(user.uid)
-            .get()
-            .then((snapshot) => {
-              setUser(snapshot.data().FullName);
-            });
-        } else {
-          setUser(null);
-        }
-      });
-    }, []);
-    return user;
-  };
+  const [userUid, setUserUid] = useState(null);
+  const [user, setUser] = useState(null);
 
-  const user = GetCurrentUser();
+  useEffect(() => {
+    auth.onAuthStateChanged((user) => {
+      if (user) {
+        setUserUid(user.uid);
+      }
+    });
+  }, []);
 
-  console.log("USER", user);
+  useEffect(() => {
+    auth.onAuthStateChanged((user) => {
+      if (user) {
+        db.collection("users")
+          .doc(user.uid)
+          .get()
+          .then((snapshot) => {
+            setUser(snapshot.data().FullName);
+          });
+      } else {
+        setUser(null);
+      }
+    });
+  }, []);
 
   return (
     <Container>
       <Navbar user={user} />
-      <Products />
+      <Products userId={userUid} />
     </Container>
   );
 };

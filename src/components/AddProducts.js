@@ -13,16 +13,16 @@ const FormStyled = styled.form`
   display: flex;
   flex-direction: column;
 `;
-const InputStyle = styled.input`
-  width: 200px;
-  padding: 10px 0px;
+const InputStyled = styled.input`
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
 `;
 const ButtonStyled = styled.button`
-  width: 200px;
-  padding: 10px;
-  background-color: lightgreen;
-  border: 1px solid gray;
-  border-radius: 10px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
   cursor: pointer;
   &:hover {
     background-color: green;
@@ -96,7 +96,7 @@ export const AddProducts = () => {
       <FormStyled autoComplete="off" action="" onSubmit={addProducts}>
         <hr style={{ margin: "20px 0px" }} />
         <label htmlFor="product-name">Nombre del producto</label>
-        <InputStyle
+        <InputStyled
           type="text"
           required
           value={productName}
@@ -106,7 +106,7 @@ export const AddProducts = () => {
         />
         <br />
         <label htmlFor="product-price">Precio del producto</label>
-        <InputStyle
+        <InputStyled
           type="number"
           required
           value={productPrice}
@@ -116,7 +116,7 @@ export const AddProducts = () => {
         />
         <br />
         <label htmlFor="product-img">Imagen del producto</label>
-        <InputStyle type="file" onChange={productImgHandler} id="file" />
+        <input type="file" onChange={productImgHandler} id="file" />
         <br />
         <ButtonStyled>Agregar producto</ButtonStyled>
       </FormStyled>
