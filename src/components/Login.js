@@ -48,6 +48,7 @@ export const Login = () => {
   const [successMessage, setSuccessMessage] = useState("");
 
   const handleLogin = (e) => {
+    setErrorMessage("");
     e.preventDefault();
     auth
       .signInWithEmailAndPassword(email, password)
@@ -57,10 +58,12 @@ export const Login = () => {
           setEmail("");
           setPassword("");
           setErrorMessage("");
+          setSuccessMessage("");
+
           navigate("/");
         }, 3000);
       })
-      .catch((error) => setErrorMessage(error.message));
+      .catch((error) => setErrorMessage("Usuario o contraseña incorrecto"));
   };
 
   return (

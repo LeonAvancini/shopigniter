@@ -95,7 +95,7 @@ export const SignUp = () => {
         />
         <br />
 
-        <label>Nombre completo</label>
+        <label>Contraseña</label>
         <InputStyled
           type="password"
           required

@@ -51,7 +51,7 @@ export const Products = ({ userId }) => {
   };
 
   if (!products.length) {
-    return <>...Cargando</>;
+    return null;
   }
 
   return (

@@ -23,6 +23,9 @@ const LeftSideContainer = styled.div`
 const ImageStyled = styled.img`
   width: 100%;
   heigth: 100%;
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 const RightSideContainer = styled.div`
@@ -82,7 +85,13 @@ export const Navbar = ({ user }) => {
   return (
     <Container>
       <LeftSideContainer>
-        <ImageStyled src={logo} alt="logo" />
+        <ImageStyled
+          src={logo}
+          alt="logo"
+          onClick={() => {
+            navigate("/");
+          }}
+        />
       </LeftSideContainer>
 
       {!user ? (
