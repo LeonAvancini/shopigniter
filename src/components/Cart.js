@@ -96,7 +96,7 @@ export const Cart = () => {
         setUser(null);
       }
     });
-  }, []);
+  });
 
   useEffect(() => {
     auth.onAuthStateChanged((user) => {

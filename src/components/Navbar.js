@@ -27,7 +27,6 @@ const ImageStyled = styled.img`
     cursor: pointer;
   }
 `;
-
 const RightSideContainer = styled.div`
   display: flex;
   align-items: center;
@@ -64,6 +63,7 @@ const ButtonStyled = styled.button`
 
 export const Navbar = ({ user }) => {
   const navigate = useNavigate();
+
   const handleLogout = () => {
     auth.signOut().then(() => {
       navigate("/login");
@@ -80,7 +80,7 @@ export const Navbar = ({ user }) => {
         });
       }
     });
-  }, []);
+  }, [totalProducts, setTotalProducts]);
 
   return (
     <Container>
