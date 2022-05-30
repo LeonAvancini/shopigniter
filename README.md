@@ -1,1 +1,1 @@
-# HOLIS
+# Project to learn about firebase
